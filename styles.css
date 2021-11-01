@@ -14,6 +14,7 @@ body {
 
 #my-canvas {
     background-color: rgb(129, 51, 51);
+    margin-top: -800;
   }
   
   #start-btn, #restart-btn {
@@ -30,12 +31,13 @@ body {
     justify-content: center;
     align-items: center;
   }
-  
-  /* hide canvas & gameover screen elements at the start 
+
+/*  hiding canvas & gameover screen elements at the start */ 
   #my-canvas {
     display: none;
   }
   
   #gameover-screen {
     display: none;
-  } */
+  }
+ 
