@@ -1,0 +1,41 @@
+body {
+    background-color: rgb(117, 39, 39);
+}
+
+.what-to-do {
+    font-family: cursive;
+    font-size: 2rem;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#my-canvas {
+    background-color: rgb(129, 51, 51);
+  }
+  
+  #start-btn, #restart-btn {
+    background-color: #05500c;
+    color: white;
+    padding: 20px;
+    font-size: 20px;
+    margin-top: 40px
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* hide canvas & gameover screen elements at the start 
+  #my-canvas {
+    display: none;
+  }
+  
+  #gameover-screen {
+    display: none;
+  } */
