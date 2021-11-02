@@ -9,7 +9,7 @@ let startButton = document.querySelector("#start-btn");
 let restartButton = document.querySelector("#restart-btn");
 let splashScreen = document.querySelector("#splash-screen");
 let gameoverScreen = document.querySelector("#gameover-screen");
-
+let score = document.querySelector("#score");
 
 //game object
 let game; 
@@ -39,7 +39,7 @@ window.addEventListener("keydown", event => {
         game.santa.santaJump();
     } else if (event.code === "Space") {
     game.createDrop();
-       game.createDraw();
+       //game.createDraw();
         
     }
 });

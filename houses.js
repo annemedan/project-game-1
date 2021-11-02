@@ -19,4 +19,5 @@ class House {
         this.x -= 2
     }
 
+
 }
