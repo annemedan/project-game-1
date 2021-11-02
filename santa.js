@@ -3,8 +3,8 @@ class Santa {
     constructor(){
         this.santaImage = new Image();
         this.santaImage.src = "./images/—Pngtree—red nosed elk santa sleigh_5713088.png";
-        this.width = 200;
-        this.height = 150;
+        this.width = 220;
+        this.height = 170;
         this.x = canvas.width / 5;
         this.y = canvas.height / 2;
         this.santaSpeed = 20;

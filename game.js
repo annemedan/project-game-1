@@ -7,10 +7,12 @@ class Game {
         this.drop;
         this.houseArr = [new House( "./images/oie_yfl4iDXqROob.png " )]; 
         this.gapBetweenHouses = 75;
-        this.houseApperingDistance = canvas.width - 600 ; 
+        this.houseApperingDistance = canvas.width - 500 ; 
         this.isGameOver = false;
         this.giftsArr = [];
         this.isPoint = 0;
+        this.score = document.querySelector("#score");
+  
   }
 
    
@@ -44,7 +46,10 @@ class Game {
        
     let lastHouse = this.houseArr[this.houseArr.length - 1]
       if (lastHouse.x  === this.houseApperingDistance){
-        let houseBottom = new House( "./images/oie_QcqZYknnYDSL.png"); // this is already a diff image, but i'll choose it randomly
+        let srcImage = ["./images/oie_agasnKIahJKw.png", "./images/oie_DlYg29DnyXFM.png", "./images/oie_lMMR54ccCMAy.png", "./images/oie_QcqZYknnYDSL.png", "./images/oie_yfl4iDXqROob.png"]
+        let randomNum = Math.floor(Math.random() * srcImage.length);
+        let houseBottom = new House( srcImage[randomNum] );
+        // this is already a diff image, but i'll choose it randomly
           this.houseArr.push(houseBottom);
 
       } 
@@ -71,7 +76,7 @@ class Game {
             }});
         
         if (this.santa.y === canvas.height - this.santa.height){
-         // ! COMMENT THIS OUT -- !this.gameOver();
+           !this.gameOver();
         } // if the santa touches the floor game is over
 
         this.giftsArr.forEach((gift, i)=>{
@@ -80,6 +85,7 @@ class Game {
             this.isPoint -= 15; 
             console.log("Lost Points", this.isPoint);
             this.giftsArr.splice(i, 1);
+            this.score.innerText = this.isPoint;
           }
 
           this.houseArr.forEach((eachHouse) => {
@@ -88,9 +94,16 @@ class Game {
               this.giftsArr.splice(i, 1);
               // ctx.clearRect(gift.x, gift.y, gift.width, gift.height)
               console.log("Points", this.isPoint);
+              this.score.innerText = this.isPoint;
             }     
           }); 
         })
+
+        if (this.isPoint < 0){
+         // ! COMMENT THIS OUT this.gameOver();
+        }
+
+        
           
 
         //* 3. drawing the elements

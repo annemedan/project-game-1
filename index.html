@@ -10,17 +10,19 @@
 <body>
 
   <div class="container">
-    <div class="what-to-do">
-        <p><i>Time is running out!</i>
-        Santa get to all houses!
-        Make sure he does not crash...
-        You don't want to ruin Christmas!</p>
-    
-    <h1> Score:<span id="score">0</span></h1>
-  </div>
+   
     <!-- SPLASH SCREEN -->
     <div id="splash-screen" class="container">
-     
+      <div class="what-to-do">
+        <h1><i>Time is running out!</i></h1>
+        <p>We need to get Sant to all the houses, but he's having trouble with his sleigh!</p>
+        <p>Make sure he does not crash! Help keep him on route with <i>Arrow Up.</i></p>
+        <p>He also needs help with the gifts, so hit <i>Space</i> to deliver them.</p>
+        <p>Make sure they get to the houses - you lose points for lost gifts!</p>
+        <p class="ruin">You don't want to ruin Christmas!!</p>
+    
+       
+    </div>
     <!--Add the carrousel with the jokes here-->
       <img src="./images/xmas-jokes/The-50-Funniest-Christmas-Jokes-for-Kids-Redo-scaled.jpeg" width="500" alt="logo">
        <button id="start-btn">Start!</button>
@@ -28,7 +30,7 @@
     
     <!-- GAME SCREEN -->
      <canvas id="my-canvas" width="1500" height="800"></canvas>
-    
+     <h2 id="score-screen"> Score:<span id="score">0</span></h2>
     <!-- GAME OVER SCREEN -->
     <div id="gameover-screen" class="container">
       <img src="./images/game_over_PNG58.png" width="500" alt="Game Over">

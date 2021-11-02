@@ -2,8 +2,25 @@ body {
     background-color: rgb(117, 39, 39);
 }
 
+h2 {
+  font-family: sans-serif;
+  font-size: 2rem;
+  font-weight: 30;
+  color: azure;
+}
+
+h1 {
+  font-family: cursive;
+  font-size: 2rem;
+  color: rgb(136, 236, 141)
+}
+
+p {
+  font-size: 1.5rem;
+}
+
 .what-to-do {
-    font-family: cursive;
+    font-family: sans-serif;
     font-size: 2rem;
     color: whitesmoke;
     display: flex;
@@ -32,8 +49,17 @@ body {
     align-items: center;
   }
 
+  .ruin {
+    color:  rgb(130, 226, 162);
+    text-decoration-line: underline;
+  }
+
 /*  hiding canvas & gameover screen elements at the start */ 
   #my-canvas {
+    display: none;
+  }
+
+  #score-screen {
     display: none;
   }
   
