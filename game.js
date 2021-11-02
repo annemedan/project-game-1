@@ -78,6 +78,8 @@ class Game {
         this.houseArr.forEach ((eachHouse) => {eachHouse.drawHouse()})
         //this.drop.drawGift();
 
+        this.createDraw();
+
         //*4. animation frame and logic changes
        if (!this.isGameOver){
            requestAnimationFrame(this.gameLoop) // element from own class

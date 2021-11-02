@@ -39,7 +39,7 @@ window.addEventListener("keydown", event => {
         game.santa.santaJump();
     } else if (event.code === "Space") {
     game.createDrop();
-       game.createDraw();
+       // game.createDraw();
         
     }
 });
