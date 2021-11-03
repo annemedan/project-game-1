@@ -4,9 +4,10 @@ class House {
         this.houseImage = new Image();
         this.houseImage.src = srcImage; // needs to be dynamic
         this.width = 300;
-        this.height = 300;
+        this.height = 275;
         this.x = canvas.width;
-        this.y = canvas.height - 300; 
+        this.y = canvas.height - 275;
+        this.speedFactor = 2
 
     }
 
@@ -16,7 +17,7 @@ class House {
     }
 
     houseMove(){
-        this.x -= 2
+        this.x -= this.speedFactor
     }
 
 

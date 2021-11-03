@@ -5,14 +5,16 @@ class Game {
         this.bg.src = "./images/msg28111671-717378.jpg";
         this.santa = new Santa();
         this.drop;
-        this.houseArr = [new House( "./images/oie_yfl4iDXqROob.png " )]; 
+        this.houseArr = [new House( "./images/houses/oie_LdH4wHQCYT1C.png" )]; 
         this.gapBetweenHouses = 75;
         this.houseApperingDistance = canvas.width - 500 ; 
         this.isGameOver = false;
         this.giftsArr = [];
         this.isPoint = 0;
         this.score = document.querySelector("#score");
-  
+        this.level = 1;
+        this.audio = new Audio("/United_States_Marine_Band_-_We_Wish_You_a_Merry_Christmas.mp3")
+ 
   }
 
    
@@ -22,9 +24,10 @@ class Game {
         //stop the game
         this.isGameOver = true;
         //hide canvas
-       canvas.style.display = "none";
+        canvas.style.display = "none";
         //show restart state
         gameoverScreen.style.display = "flex";
+        this.audio.pause();
   }
 
   
@@ -45,8 +48,8 @@ class Game {
   addHouses = () => {
        
     let lastHouse = this.houseArr[this.houseArr.length - 1]
-      if (lastHouse.x  === this.houseApperingDistance){
-        let srcImage = ["./images/oie_agasnKIahJKw.png", "./images/oie_DlYg29DnyXFM.png", "./images/oie_lMMR54ccCMAy.png", "./images/oie_QcqZYknnYDSL.png", "./images/oie_yfl4iDXqROob.png"]
+      if (lastHouse.x  === this.houseApperingDistance || lastHouse.x  === this.houseApperingDistance - 2 ){
+        let srcImage = ["./images/houses/oie_BNkgrqJD3KB3.png", "./images/houses/oie_DfMyrqCaniuz.png", "./images/houses/oie_G9vw1EMf4bzJ.png", "./images/houses/oie_hPdGyaRT2xm6.png", "./images/houses/oie_LdH4wHQCYT1C.png"]
         let randomNum = Math.floor(Math.random() * srcImage.length);
         let houseBottom = new House( srcImage[randomNum] );
         // this is already a diff image, but i'll choose it randomly
@@ -65,7 +68,18 @@ class Game {
         this.santa.santaGravity();    
          //this.house.houseMove(); // --- for the array, need to change to a forEach
         this.houseArr.forEach((eachHouse) => {
-            eachHouse.houseMove();
+            eachHouse.houseMove(); 
+            // let curLevel = Math.floor(this.isPoint / 150);
+            // if (this.level != curLevel && this.isPoint > 0 && this.isPoint % 150 === 0) {
+            //     this.level = curLevel;
+            //     eachHouse.speedFactor += this.level;
+            //     console.log(eachHouse.speedFactor)
+            // }
+            if (Math.floor(this.isPoint / 150)){
+              eachHouse.speedFactor = 4;
+            }
+
+           
         })
         
         this.addHouses();
@@ -73,17 +87,23 @@ class Game {
         this.houseArr.forEach ((eachHouse) => {
             if (this.santa.santaHouseCollision(eachHouse)) {
              this.gameOver();
+  
             }});
         
         if (this.santa.y === canvas.height - this.santa.height){
-           !this.gameOver();
+            this.gameOver();
+
         } // if the santa touches the floor game is over
+
+        if (this.santa.y <= 0 ){
+          this.gameOver();
+       }
 
         this.giftsArr.forEach((gift, i)=>{
 
           if (gift.y >= canvas.height) {
             this.isPoint -= 15; 
-            console.log("Lost Points", this.isPoint);
+            //console.log("Lost Points", this.isPoint);
             this.giftsArr.splice(i, 1);
             this.score.innerText = this.isPoint;
           }
@@ -92,17 +112,15 @@ class Game {
             if (gift.giftCollision(eachHouse)){
               this.isPoint += 5
               this.giftsArr.splice(i, 1);
-              // ctx.clearRect(gift.x, gift.y, gift.width, gift.height)
-              console.log("Points", this.isPoint);
+              //console.log("Points", this.isPoint);
               this.score.innerText = this.isPoint;
             }     
           }); 
         })
 
         if (this.isPoint < 0){
-         // ! COMMENT THIS OUT this.gameOver();
+          this.gameOver();
         }
-
         
           
 
@@ -111,13 +129,12 @@ class Game {
         this.santa.drawSanta();
         this.houseArr.forEach ((eachHouse) => {eachHouse.drawHouse()})
         
-        
         this.createDraw(); // has to be inside the game loop 
-
+        
         //*4. animation frame and logic changes
-       if (!this.isGameOver){
+      if (!this.isGameOver){
            requestAnimationFrame(this.gameLoop) // element from own class
-       }
+      }
         
     }
 }
