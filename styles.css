@@ -90,3 +90,9 @@ p {
     justify-content: center;
     margin-bottom: 5rem;
   }
+
+  footer {
+    font-family: monospace;
+    color: white;
+    font-size: 0.5rem;
+  }
