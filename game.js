@@ -13,7 +13,8 @@ class Game {
         this.isPoint = 0;
         this.score = document.querySelector("#score");
         this.level = 1;
-        this.audio = new Audio("./images/United_States_Marine_Band_-_We_Wish_You_a_Merry_Christmas.mp3")
+        // this.audio = new Audio("./images/United_States_Marine_Band_-_We_Wish_You_a_Merry_Christmas.mp3")
+        this.audio = new Audio("https://raw.githubusercontent.com/annemedan/project-game-1/images/United_States_Marine_Band_-_We_Wish_You_a_Merry_Christmas.mp3")
  
   }
 
