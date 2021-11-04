@@ -3,8 +3,8 @@ class Santa {
     constructor(){
         this.santaImage = new Image();
         this.santaImage.src = "./images/oie_pjAwB3IHdgcf.png";
-        this.width = 170;
-        this.height = 120;
+        this.width = canvas.width * 0.12;
+        this.height = canvas.height * 0.14;
         this.x = canvas.width / 5;
         this.y = canvas.height / 2;
         this.santaSpeed = 20;

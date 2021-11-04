@@ -2,8 +2,8 @@ class Drop {
     constructor(posX, posY) {
         this.giftImage = new Image();
         this.giftImage.src = "./images/icons8-gift-64.png";
-        this.width = 45;
-        this.height = 45;
+        this.width = (canvas.width / 33);
+        this.height = (canvas.width / 34);
         this.x = posX;
         this.y = posY;
         this.giftSpeed = 7;

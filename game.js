@@ -7,7 +7,7 @@ class Game {
         this.drop;
         this.houseArr = [new House( "./images/houses/oie_LdH4wHQCYT1C.png" )]; 
         this.gapBetweenHouses = 75;
-        this.houseApperingDistance = canvas.width - 500 ; 
+        this.houseApperingDistance = canvas.width - 350 ; 
         this.isGameOver = false;
         this.giftsArr = [];
         this.isPoint = 0;
@@ -83,7 +83,7 @@ class Game {
             //     eachHouse.speedFactor += this.level;
             //     console.log(eachHouse.speedFactor)
             // }
-            if (Math.floor(this.isPoint / 150)){
+            if (Math.floor(this.isPoint / 200)){
               eachHouse.speedFactor = 4;
             }
 
