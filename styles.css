@@ -38,7 +38,6 @@ p {
 #my-canvas {
     background-color: rgb(129, 51, 51);
     margin-top: 3rem;
-    /*width: 80%; */
 
 
   }
@@ -47,8 +46,8 @@ p {
     background-color: rgb(201, 58, 58);
     color: white;
     padding: 1rem;
-    font-size: 0.5rem;
-    margin-top: 2.0rem;
+    font-size: 1rem;
+    margin-top: 1rem;
   }
   
   .container {

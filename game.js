@@ -98,7 +98,7 @@ class Game {
   
             }});
         
-        if (this.santa.y === canvas.height - this.santa.height){
+        if (this.santa.y >= canvas.height - this.santa.height){
             this.gameOver();
 
         } // if the santa touches the floor game is over
