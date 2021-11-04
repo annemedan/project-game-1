@@ -30,6 +30,14 @@ class Game {
         this.audio.pause();
   }
 
+  congrats = () => {
+    this.isGameOver = true;
+    canvas.style.display = "none";
+    congratsScreen.style.display = "flex";
+    this.audio.pause();
+}
+
+
   
   createDrop = () => {
   
@@ -122,8 +130,10 @@ class Game {
           this.gameOver();
         }
         
+        if (this.isPoint >= 1000){
+          this.congrats();
+        }
           
-
         //* 3. drawing the elements
         ctx.drawImage( this.bg, 0, 0, canvas.width, canvas.height)
         this.santa.drawSanta();

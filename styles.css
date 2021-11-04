@@ -11,7 +11,7 @@ h2 {
 
 h1 {
   font-family: cursive;
-  font-size: 3rem;
+  font-size: 4.5rem;
   color: rgb(136, 236, 141);
   margin-top: 100px; 
 }
@@ -20,24 +20,16 @@ p {
   font-size: 1.5rem;
 }
 
-#bprev, #bnext {
-  background-color: rgb(129, 51, 51);
-  color: white;
-  padding: 5px;
-  font-size: 10px;
-  margin-top: 5px
-}
 
-
-
-.what-to-do {
-    font-family: sans-serif;
+.what-to-do, .congrats-txt {
+    font-family: monospace;
     font-size: 2rem;
     color: whitesmoke;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center; 
+    padding-right: 20px;
 }
 
 #my-canvas {
@@ -61,7 +53,7 @@ p {
   }
 
   .ruin {
-    color: rgb(225, 236, 125);
+    color: rgb(36, 136, 44);
     text-decoration-line: underline;
   }
 
@@ -78,8 +70,16 @@ p {
     display: none;
   }
 
+  #gameover-screen {
+    display: none;
+  }
+
+  #congrats-screen {
+    display: none;
+  }
+
   .intro-row {
-    margin-top: 100px;
+    margin-top: 75px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
