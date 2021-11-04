@@ -8,6 +8,7 @@ let gameScreen = document.querySelector("#score-screen");
 //dom elements
 let startButton = document.querySelector("#start-btn");
 let restartButton = document.querySelector("#restart-btn");
+let restartButton2 = document.querySelector("#restart-btn2")
 let splashScreen = document.querySelector("#splash-screen");
 let gameoverScreen = document.querySelector("#gameover-screen");
 let congratsScreen = document.querySelector("#congrats-screen");
@@ -28,6 +29,18 @@ let game;
 // * functions 
 const restartGame = () => {
     gameoverScreen.style.display = "none";
+    congratsScreen.style.display = "none"
+    canvas.style.display = "flex";
+    gameScreen.style.display = "flex";
+    game = new Game();
+    game.gameLoop();
+    game.score.innerText = 0;
+    game.audio.play();
+   
+}
+
+const restartGameAfterWin = () => {
+    congratsScreen.style.display = "none"
     canvas.style.display = "flex";
     gameScreen.style.display = "flex";
     game = new Game();
@@ -52,6 +65,7 @@ const startGame = () => {
 // * add event listeners 
 startButton.addEventListener("click", startGame);
 restartButton.addEventListener("click", restartGame)
+restartButton2.addEventListener("click", restartGameAfterWin)
 
 window.addEventListener("keydown", event => {
     if (event.code === "ArrowUp"){

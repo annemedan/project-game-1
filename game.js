@@ -130,7 +130,7 @@ class Game {
           this.gameOver();
         }
         
-        if (this.isPoint >= 1000){
+        if (this.isPoint >= 500){
           this.congrats();
         }
           

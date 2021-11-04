@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Are+You+Serious&family=Kalam:wght@300&display=swap');
+
+
 body {
     background-color: rgb(117, 39, 39);
 }
@@ -10,8 +13,8 @@ h2 {
 }
 
 h1 {
-  font-family: cursive;
-  font-size: 4.5rem;
+  font-family: 'Are You Serious', cursive;
+  font-size: 5rem;
   color: rgb(136, 236, 141);
   margin-top: 100px; 
 }
@@ -22,8 +25,8 @@ p {
 
 
 .what-to-do, .congrats-txt {
-    font-family: monospace;
-    font-size: 2rem;
+    font-family: 'Kalam', cursive;
+    font-size: 3.5rem;
     color: whitesmoke;
     display: flex;
     flex-direction: column;
@@ -37,7 +40,7 @@ p {
     margin-top: -800;
   }
   
-  #start-btn, #restart-btn {
+  #start-btn, #restart-btn, #restart-btn2 {
     background-color: #05500c;
     color: white;
     padding: 20px;
@@ -79,9 +82,9 @@ p {
   }
 
   .intro-row {
-    margin-top: 75px;
+    margin-top: 50px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-bottom: 100px;;
+    margin-bottom: 100px;
   }
